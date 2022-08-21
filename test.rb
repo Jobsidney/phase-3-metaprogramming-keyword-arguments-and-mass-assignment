@@ -28,11 +28,12 @@ def print_name_and_greeting(greeting:, name:)
 #MASS CLASS ASSIGNMENT 
 
   class User
-    attr_accessor :name, :age, :location, :user_name
+    
   
     def initialize(attributes)
         attributes.each{
             |key,value|
+            self.class.attr_accessor(key)
             self.send("#{key}=", value)
         }
     end
